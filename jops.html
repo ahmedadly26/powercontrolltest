@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/jops.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Power Control</title>
+</head>
+
+<body>
+
+    <header class="header">
+        <nav>
+            <div class="left">
+                <img src="images/full-logo.png" alt="">
+            </div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">HOME</a></li>
+                    <li><a href="About-us.html">ABOUT US</a></li>
+                    <li><a href="Projects.html">PROJECTS</a></li>
+                    <li><a href="">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+        <img src="images/wallpaperflare.com_wallpaper.jpg" alt="">
+    </header>
+
+    <div class="page">
+        <h1>Apply For Job</h1>
+        <hr>
+
+        <!-- Google Forms Link -->
+        <h2>Upload Your CV</h2>
+        <p>Please upload your CV using the link below:</p>
+        <a href="https://forms.gle/tsn5eYKeo4eCUs6C7" target="_blank">Upload CV</a>
+
+        <!-- Form for other details -->
+        <h2>Submit Your Details</h2>
+        <form id="contact-form">
+            <div>
+                <label for="">Name :</label>
+                <input type="text" name="name" placeholder="Name" required>
+            </div>
+            <div>
+                <label for="">Age :</label>
+                <input type="text" name="age" placeholder="Age" required>
+            </div>
+            <div>
+                <label for="">Job :</label>
+                <input type="text" name="job" placeholder="Job" required>
+            </div>
+            <div>
+                <label for="">Portfolio Link :</label>
+                <input type="text" name="portfolio" placeholder="Portfolio Link">
+            </div>
+            <button type="submit" class="submit">Submit</button>
+        </form>
+    </div>
+
+    <footer id="footer">
+        <div class="content">
+            <div class="column1">
+                <img src="images/full-logo.png" alt="">
+            </div>
+            <div class="column2">
+                <h3 class="contact-follow">Contact Us</h3>
+                <ul>
+                    <li><i class='bx bxs-phone'></i> 01288773777</li>
+                    <li><i class='bx bx-message-rounded-detail'></i>Sales@powercontrol-eg.com</li>
+                    <li><a href="https://linktr.ee/powercontrol.eg">Company Profile</a></li>
+                </ul>
+            </div>
+            <div class="column3">
+                <h3 class="contact-follow">Follow Us</h3>
+                <ul>
+                    <li><i class='bx bxl-facebook'></i><a href="https://www.facebook.com/PowerControl.EGYPT">Facebook</a></li>
+                    <li><i class='bx bxl-instagram'></i><a href="https://api.whatsapp.com/send?phone=201288773777">WhatsApp</a></li>
+                    <li><i class='bx bxl-youtube'></i><a href="https://www.youtube.com/@PowerControl-eg">YouTube</a></li>
+                    <li><i class='bx bxl-linkedin'></i><a href="https://www.linkedin.com/company/powercontrol-eg">LinkedIn</a></li>
+                </ul>
+            </div>
+            <div class="column4">
+                <h3>Website</h3>
+                <ul>
+                    <li><i class='bx bx-log-in-circle'></i><a href="">ABOUT</a></li>
+                    <li><i class='bx bx-log-in-circle'></i><a href="#">SERVICE</a></li>
+                    <li><i class='bx bx-log-in-circle'></i><a href="#">PROJECTS</a></li>
+                    <li><i class='bx bx-log-in-circle'></i><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+        </div>
+        <p>© Power Control. All rights reserved.</p>
+    </footer>
+
+    <!-- EmailJS Script -->
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script>
+        emailjs.init('email_BKR7yCCXr7neZ8s0hAHLX68c'); // Your User ID
+    
+        document.getElementById('contact-form').addEventListener('submit', function (event) {
+            event.preventDefault();
+    
+            // Collect form data
+            const formData = new FormData(event.target);
+    
+            emailjs.sendForm('service_1o9pepq', '__ejs-test-mail-service__', formData)
+                .then(function (response) {
+                    alert('Form successfully submitted!');
+                }, function (error) {
+                    alert('Failed to submit form. Please try again.');
+                });
+        });
+    </script>
+    
+</body>
+
+</html>
